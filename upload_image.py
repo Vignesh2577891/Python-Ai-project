@@ -21,6 +21,20 @@ def run_minicpm(image_path, prompt):
     if response.ok:
         print("Response from model:")
         print(response.json()['response'])
+
+        # File name
+        filename = "output.txt"
+
+        # Data to write
+        data = response.json()['response']
+
+        # Open the file in append mode, create if not exists
+        with open(filename, "a") as file:
+            file.write(data)
+
+        print(f"Data written to {filename}")
+
+        
     else:
         print("Error:", response.status_code, response.text)
 

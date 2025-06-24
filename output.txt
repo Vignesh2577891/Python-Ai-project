@@ -1,0 +1,30 @@
+{
+  "company": "Invoice No: 12345",
+  "date": "18 June 2025",
+  "address": "39 Hwy Road, Hawkesdale, IA USA 3636",
+  "items": [
+    {
+      "name": "Eggshell Canvas Tape",
+      "quantity": 1,
+      "unit price": "$1.23"
+    },
+    {
+      "name": "Oriental Cotton Shirt",
+      "quantity": 2,
+      "unit price": "$1.79"
+    },
+    {
+      "name": "Floral Cotton Dress",
+      "quantity": 1,
+      "unit price": "$1.83"
+    }
+  ],
+  "tax amount": "$500",
+  "total amount": "$500",
+  "thank you message": "Thank you!",
+  "payment information": {
+    "name on card holder's account name": "Samina Haidak",
+    "account number": "123-496-7890",
+    "date of payment": "Pay by: July 5, 2025"
+  }
+}
