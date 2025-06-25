@@ -1,0 +1,35 @@
+Using the provided invoice information, here is a JSON representation of the data:
+
+```json
+{
+    "invoice_number": "RD1750404265898",
+    "invoice_date": "Jun 24th 2023, 10:47 AM",
+    "billing_period": {
+        "start": "Jun 24th 2023",
+        "end": "24th Sep 2025"
+    },
+    "subscriber": {
+        "name": null,
+        "email": null
+    },
+    "billing_address": "10/337, CBDA Colony Main Road, Sitalapakkam, Chennai, Tamil Nadu 600131, India",
+    "tax_information": {
+        "tax_type": "Cash",
+        "tax_rate": "",
+        "tax_id": ""
+    },
+    "service_description": "Ride Charge", 
+    "payment_method": "Cash Using
+                    | Paid By Rapidol",
+    "total_amount": {
+        "currency": "INR",
+        "amount_excluding_tax": 112.64,
+        "tax_amount": 0,
+        "amount_including_tax": 153
+    },
+    "discount": {
+        "amount": 17.98, 
+        "percentage": 17%
+    }
+}
+```

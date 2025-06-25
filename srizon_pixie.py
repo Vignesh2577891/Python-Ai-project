@@ -14,7 +14,7 @@ def run_minicpm(image_bytes, prompt):
     base64_image = encode_image_to_base64(image_bytes)
 
     payload = {
-        "model": "srizon/pixie",
+        "model": "minicpm-v",
         "prompt": prompt,
         "images": [base64_image],
         "stream": False
