@@ -56,7 +56,44 @@ with st.container():
 
     uploaded_file = st.file_uploader("📤 Upload Image", type=["jpg", "jpeg", "png"])
 
-    prompt = st.text_area("✏️ Enter your prompt", "Extract data in JSON format from this uploaded invoice")
+# Define the expected JSON schema (used for reference or default value)
+    jsonFormat = {
+    "invoice_number": "string",
+    "invoice_date": "YYYY‑MM‑DD",
+    "billing_period": {
+        "start": "YYYY‑MM‑DD",
+        "end": "YYYY‑MM‑DD"
+    },
+    "subscriber": {
+        "name": "string",
+        "email": "string"
+    },
+    "billing_address": "string",
+    "tax_information": {
+        "tax_type": "string",
+        "tax_rate": "decimal",
+        "tax_id": "string"
+    },
+    "service_description": "string",
+    "payment_method": "string",
+    "total_amount": {
+        "currency": "string",
+        "amount_excluding_tax": 0,
+        "tax_amount": 0,
+        "amount_including_tax": 0
+    }
+}
+
+# Use jsonFormat as a default prompt
+    default_prompt = f"Extract data in JSON format from this uploaded invoice using schema:\n{jsonFormat}"
+
+# Streamlit text area for user prompt
+    prompt = st.text_area(
+        "✏️ Enter your prompt",
+        value=default_prompt,
+        height=200,
+        help="Write instructions for how you'd like the invoice parsed."
+    )
 
     submit = st.button("🚀 Run Model")
 
@@ -74,7 +111,7 @@ with st.container():
                 st.code(response, language='json')
 
             # Save to file
-            with open("output.txt", "a") as f:
+            with open("output.txt", "a",encoding="utf-8") as f:
                 f.write(response + "\n")
 
             st.success("✅ Output saved to `output.txt`.")
