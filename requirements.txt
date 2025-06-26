@@ -1,2 +1,8 @@
-requests
 streamlit
+requests
+PyMuPDF==1.22.5
+Pillow
+easyocr
+torch
+torchvision
+numpy
